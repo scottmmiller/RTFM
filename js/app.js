@@ -11,7 +11,7 @@ app.config(function($routeProvider) {
 		templateUrl: 'js/views/threads/threadsView.html',
 		controller: 'ThreadsController',
 		resolve: {
-			trheadsRef: function(threadsService) {
+			threadsRef: function(threadsService) {
 				return threadsService.getThreads();
 			}
 		}

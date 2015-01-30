@@ -2,11 +2,20 @@
 
 var app = angular.module('rtfmApp');
 
-app.controller('ThreadsController', function($scope, environmentService, threadsService) {
+app.controller('ThreadsController', function($scope, environmentService, threadsService, threadsRef) {
 
 	$scope.username = environmentService.getUsername();
 
-	$scope.threads = threadsService.getThreads().$asArray;
-	
+	$scope.threads = threadsRef.$asArray;
 
+	$scope.threads.$loaded().then(function(threads) {
+		console.log(threads);
+	})
+	
+	$scope.createThread = function(username, title) {
+		$scope.threads.$add({
+			username: username,
+			title: title
+		});
+	};
 });

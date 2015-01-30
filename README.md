@@ -215,10 +215,7 @@ each thread's unique page.
 </div>
 ```
 
-2. You'll need to create a function in your ```ThreadsCtrl``` named ```createThread```. This function must be attached
-to ```$scope``` and should accept a username and a thread title as arguments. It will then use the AngularFire "array"
-```$add``` function to add the new thread to the ```threads``` array. Once you get this working, you'll be able to
-add threads in your view and watch them automatically add themselves to the threads list.
+2. You'll need to create a function in your ```ThreadsCtrl``` named ```createThread```. This function must be attached to ```$scope``` and should accept a username and a thread title as arguments. It will then use the AngularFire "array" ```$add``` function to add the new thread to the ```threads``` array. Once you get this working, you'll be able to add threads in your view and watch them automatically add themselves to the threads list.
 
 ```
 angular.module('rtfmApp')
