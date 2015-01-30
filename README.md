@@ -1,7 +1,7 @@
 RTFM
 ====
 
-A project start for practicing using Firebase with AngularJS.
+<!-- A project start for practicing using Firebase with AngularJS.
 
 We're going to create a multi-user, real-time forum (RTFM).
 
@@ -15,7 +15,7 @@ We're going to create a multi-user, real-time forum (RTFM).
 3. Add a ```.config``` function and include ```$routeProvider``` to your injections.
 4. Create a router and add ```/login```, ```/threads``` and ```/threads/:threadId``` as the URLS
 5. Use .otherwise and redirectTo '/login'
-
+ -->
 ## Step 3: Create Login View
 
 1. In your index.html file include the following line to tie in your router.
