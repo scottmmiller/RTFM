@@ -1,9 +1,12 @@
+'use strict'
+
 var app = angular.module('rtfmApp');
 
-app.controller('ThreadsController', function($scope) {
+app.controller('ThreadsController', function($scope, environmentService, threadsService) {
 
-$scope.test = "ThreadsController test!!";
+	$scope.username = environmentService.getUsername();
 
+	$scope.threads = threadsService.getThreads().$asArray;
 	
 
 });

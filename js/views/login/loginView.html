@@ -1,4 +1,8 @@
-<h3> Login View </h3>
+<h3> LogIn Here </h3>
 <div> {{test}} </div> <br />
 <br />
-<div> {{env}} </div>
+<div>
+	<input type="text" ng-model='username' placeholder='Whats your username?' />
+	<button ng-click='login(username)'> Log Me In!! </button>
+
+</div>

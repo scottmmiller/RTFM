@@ -11,7 +11,9 @@ app.config(function($routeProvider) {
 		templateUrl: 'js/views/threads/threadsView.html',
 		controller: 'ThreadsController',
 		resolve: {
-
+			trheadsRef: function(threadsService) {
+				return threadsService.getThreads();
+			}
 		}
 	}).when('/threads/:threadId', {
 		templateUrl: 'js/views/SingleThread/singleThread.html',
@@ -20,6 +22,17 @@ app.config(function($routeProvider) {
 
 		}
 	}).otherwise('/login');
+
+});
+
+app.run(function($rootScope, $location, environmentService) {
+	$rootScope.$on('$routeChangeStart', function(event, next, current) {
+		if(environmentService.getUsername()) {
+			$rootScope.user = environmentService.getUsername();
+		} else {
+			$location.path('/login');
+		}
+	})
 
 
 });

@@ -73,10 +73,10 @@ angular.module('rtfmApp')
 
 4. Inject ```EnvironmentService``` into your ```LoginCtrl``` and assign your environment to ```$scope.env```, then
 read out ```{{ env }}}``` in your ```login.html``` view to confirm that your environment variables are injecting
-correctly. You should see your ```window.env``` object logged out onto your login view. -->
+correctly. You should see your ```window.env``` object logged out onto your login view.
 
-
-## Step 4.1: Create a Login Form
+ -->
+<!-- ## Step 4.1: Create a Login Form
 
 1. Open up ```login.html``` and create a text input bound to ```$scope.username``` and a button that calls
 ```logMeIn(username)``` when clicked.
@@ -105,9 +105,9 @@ $scope.$apply(function(){
 6. Create a ```threads.html``` view and a ```ThreadsCtrl``` controller in the appropriate folder. Add the new view and
 controller to the ```threads``` route in ```app.js```.
 7. Test your login and make sure that it forwards you to the stubbed threads view.
+ -->
 
-
-## Step 5: Protect our Routes
+<!-- ## Step 5: Protect our Routes
 A problem we're going to run into as we're setting up our routing is sometimes we only want certain authenticated users to see certain routes. What we're going to do in this step is to secure our routes so only those people who we want to see certain routes will be able to. 
 
 1. Head over to your app.js file and under your .config block, add a new .run block. This .run block will be the first thing that Angular runs before your app starts to be initialized. 
@@ -118,15 +118,13 @@ A problem we're going to run into as we're setting up our routing is sometimes w
     //callback
   })
 ```
-is how you tell angular to listen for certain events. So in side your .run block, tell angular to listen for the '$routeChangeStart' event and pass it a callback function with a 'event', 'next', and 'current' parameter. As you can imagine, 'event' is the event that's happening, 'next' is the route the application is going to, and 'current' is the current route the application is on.
+is how you tell angular to listen for certain events. So in side your .run block, tell angular to listen for the '$routeChangeStart' event and pass it a callback function with an 'event', 'next', and 'current' parameter. As you can imagine, 'event' is the event that's happening, 'next' is the route the application is going to, and 'current' is the current route the application is on.
 4. Inside your callback, check to see if ```EnvironmentService.getUserName()''' returns a truthy value, if it doesn't that means the user hasn't been created - which means we need to redirect the user to the login page IE $location.path('/login'). If it does, set a property on $rootScope (for now) of username with the value being what getUserName returned.
-
-## Step 4: Create a Thread Service and Use Firebase Refs
+ -->
+<!-- ## Step 5.1: Create a Thread Service and Use Firebase Refs
 
 1. Create a ThreadService and put it the appropriate folder.
-2. Create methods named ```getThreads``` and ```getThread``` to generate AngularFire references to all threads and any
-individual thread. You'll need to inject ```EnvironmentService``` to get your Firebase url and you'll need to inject
-```$firebase``` to generate Firebase references (heretofore referred to as "refs").
+2. Create methods named ```getThreads``` and ```getThread``` to generate AngularFire references to all threads and any individual thread. You'll need to inject ```EnvironmentService``` to get your Firebase url and you'll need to inject ```$firebase``` to generate Firebase references (heretofore referred to as "refs").
 
 ```
 angular.module('rtfmApp')
@@ -176,19 +174,13 @@ angular.module('rtfmApp')
 
 ***Why $asArray()???***
 
-If you [read the docs](https://www.firebase.com/docs/web/libraries/angular/api.html#angularfire-firebase), you'll see
-that AngularFire refs generated with ```$firebase``` are meant for certain kinds of low-level Firebase transactions.
+If you [read the docs](https://www.firebase.com/docs/web/libraries/angular/api.html#angularfire-firebase), you'll see that AngularFire refs generated with ```$firebase``` are meant for certain kinds of low-level Firebase transactions.
 You don't want to use raw AngularFire refs very often... you want to use ```$asArray()``` or ```$asObject()``` to
-convert the ref into an AngularFire array or an AngularFire object. These "arrays" and objects are designed very
-specifically to work with Angular views.
+convert the ref into an AngularFire array or an AngularFire object. These "arrays" and objects are designed very specifically to work with Angular views.
 
-AngularFire "arrays" are not true JavaScript arrays (hence the quotation marks), but they are as close as you'll get to an
-array with Firebase. Firebase doesn't support JavaScript arrays for some very fundamental reasons related to data
-integrity... but AngularFire "arrays" provide functionality that is very similar to the JS arrays with which you are
-familiar.
+AngularFire "arrays" are not true JavaScript arrays (hence the quotation marks), but they are as close as you'll get to an array with Firebase. Firebase doesn't support JavaScript arrays for some very fundamental reasons related to data integrity... but AngularFire "arrays" provide functionality that is very similar to the JS arrays with which you are familiar.
 
-You'll use ```$asObject()``` when you want to interact with the individual keys of the Firebase ref like you would with
-a JS object. For instance, a single thread would be treated as an object so that you could do things like this:
+You'll use ```$asObject()``` when you want to interact with the individual keys of the Firebase ref like you would with a JS object. For instance, a single thread would be treated as an object so that you could do things like this:
 
 ```
 var thread = threadRef.$asObject();
@@ -197,7 +189,7 @@ thread.$save();
 ```
 
 Notice that we you could set the object property ```thread.title``` just as you would any JS object.
-
+ -->
 ### Step 5.2: Set up Threads view
 
 1. Let's set up ```threads.html``` with a list of threads, an input and a button to create a new thread, and links to
