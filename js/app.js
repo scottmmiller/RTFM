@@ -19,7 +19,12 @@ app.config(function($routeProvider) {
 		templateUrl: 'js/views/SingleThread/singleThread.html',
 		controller:'SingleController',
 		resolve: {
-
+			singleThreadRef: function(threadsService, $route) {
+				return threadsService.getSingleThread($route.current.params.threadId);
+			},
+			commentsRef: function(threadsService, $route) {
+				return threadsService.getComments($route.current.params.threadId);
+			}
 		}
 	}).otherwise('/login');
 

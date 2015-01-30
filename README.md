@@ -242,8 +242,7 @@ angular.module('rtfmApp')
 
 1. Create a ```ThreadCtrl``` and a ```thread.html```
 2. Add the new controller and view to the ```thread``` route in ```app.js```. Also create a resolve for ```thread```
-that uses ```$route.current.params.threadId``` and ```ThreadService.getThread()``` to inject each thread's AngularFire ref into
-your new ```ThreadCtrl```.
+that uses ```$route.current.params.threadId``` and ```ThreadService.getThread()``` to inject each thread's AngularFire ref into your new ```ThreadCtrl```.
 
 ```
 .when('thread/:threadId', {
@@ -272,14 +271,9 @@ angular.module('rtfmApp')
 
 ***Why $asObject and $bindTo???***
 
-AngularFire refs can get converted into AngularFire "objects". These "objects" can be bound to ```$scope``` using
-AngularFire's
-[$bindTo](https://www.firebase.com/docs/web/libraries/angular/api.html#angularfire-firebaseobject-bindto-scope-varname)
-function. This sets up 3-way binding from your view, through ```$scope``` and all the way back to your Firebase
-data store. You can edit these AngularFire "objects" in place in your view and watch the changes propagate throughout
-your entire app.
+AngularFire refs can get converted into AngularFire "objects". These "objects" can be bound to ```$scope``` using AngularFire's [$bindTo](https://www.firebase.com/docs/web/libraries/angular/api.html#angularfire-firebaseobject-bindto-scope-varname) function. This sets up 3-way binding from your view, through ```$scope``` and all the way back to your Firebase data store. You can edit these AngularFire "objects" in place in your view and watch the changes propagate throughout your entire app.
 
-4. Edit ```app/views/thread.html``` to create a inputs to add comments under the thread as well as read out all
+4. Edit ```app/views/thread.html``` to create an input to add comments under the thread as well as read out all
 existing comments.
 
 ```
@@ -298,10 +292,7 @@ existing comments.
 ```
 
 Notice how we're looping through ```comment in comments```? We're going to want each thread to have an "array" of
-comments in its Firebase data structure. We haven't created the ```comments``` "array" yet, but we can create an
-AngularFire ref to it anyway. Firebase will treat that ref as if it already exists, so we can loop through it and add
-to it seamlessly. This will require creating a new ```getComments``` method in ```ThreadService``` and injecting this
-new ```commentsRef``` into ```ThreadCtrl``` using a ```resolve``` in your ```thread``` route.
+comments in its Firebase data structure. We haven't created the ```comments``` "array" yet, but we can create an AngularFire ref to it anyway. Firebase will treat that ref as if it already exists, so we can loop through it and add to it seamlessly. This will require creating a new ```getComments``` method in ```ThreadService``` and injecting this new ```commentsRef``` into ```ThreadCtrl``` using a ```resolve``` in your ```thread``` route.
 
 This may seem like a lot of steps, but you've already gone through these steps twice with ```threadsRef``` and
 ```threadRef```. The new ```commentsRef``` follows the same pattern.
@@ -361,8 +352,7 @@ angular.module('rtfmApp')
   });
 ```
 
-Notice that we've added a new ```$scope.createComment``` function. This will get called from the ```thread.html``` view
-and add a comment to your AngularFire ```comments``` "array".
+Notice that we've added a new ```$scope.createComment``` function. This will get called from the ```thread.html``` view and add a comment to your AngularFire ```comments``` "array".
 
 ## Black Diamond
 

@@ -1,1 +1,14 @@
-<div>{{test}}</div>
+<h3> {{Thread View}} </h3>
+
+<div>
+	<h1> {{singleThread.title}} (by {{singleThread.username}}</h1>
+
+	<form name="newCommentForm">
+		<input type="text" ng-model='newCommentText' placeholder='Write your comment here...' required>
+		<button ng-disabled='newCommentForm.$invalid' ng-click='createComment(username.newCommentText)'> Add what I said </button>
+	</form>
+
+	<ul>
+		<li ng-repeat='comment in comments'> {{comment.username}}: {{comment.text}}</li>
+	</ul>
+</div>

@@ -11,4 +11,8 @@ app.service('threadsService', function($http, $q, environmentService, $firebase)
 		return $firebase(new Firebase(firebaseUrl + '/threads/' + threadId));
 	};
 
+	this.getComments = function(threadId) {
+		return $firebase(new Firebase(firebaseUrl + '/threads/' + threadId + '/comments'));
+	};
+
 });
