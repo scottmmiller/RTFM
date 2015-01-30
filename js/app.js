@@ -2,19 +2,19 @@ var app = angular.module('rtfmApp', ['firebase', 'ngRoute']);
 
 app.config(function($routeProvider) {
 	$routeProvider.when('/login', {
-		templateUrl: 'js/templates/login/login.html',
+		templateUrl: 'js/views/login/loginView.html',
 		controller: 'LoginController',
 		resolve: {
 
 		}
 	}).when('/threads', {
-		templateUrl: 'js/templates/threads/threads.html',
+		templateUrl: 'js/views/threads/threadsView.html',
 		controller: 'ThreadsController',
 		resolve: {
 
 		}
 	}).when('/threads/:threadId', {
-		templateUrl: 'js/templates/SingleThread/SingleThread.html',
+		templateUrl: 'js/views/SingleThread/singleThread.html',
 		controller:'SingleController',
 		resolve: {
 

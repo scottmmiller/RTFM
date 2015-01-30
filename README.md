@@ -16,7 +16,7 @@ We're going to create a multi-user, real-time forum (RTFM).
 4. Create a router and add ```/login```, ```/threads``` and ```/threads/:threadId``` as the URLS
 5. Use .otherwise and redirectTo '/login'
  -->
-## Step 3: Create Login View
+<!-- ## Step 3.1: Create Login View
 
 1. In your index.html file include the following line to tie in your router.
 
@@ -30,7 +30,7 @@ We're going to create a multi-user, real-time forum (RTFM).
 3. Include your new view and controller in your ```login``` route.
 
 
-## Step 3: Set Up Environment Variables
+## Step 3.2: Set Up Environment Variables
 
 1. Create a new file at ```/app/env.js``` and set it up like so...
 
@@ -41,8 +41,7 @@ window.env = {
 };
 ```
 
-Feel free to use my ```rtfm-demo``` firebase, or create you own at [firebase.com](https://firebase.com). If you use
-my firebase, please change the base to reflect your name rather than 'chris'. For example you could use
+Feel free to use my ```rtfm-demo``` firebase, or create you own at [firebase.com](https://firebase.com). If you use my firebase, please change the base to reflect your name rather than 'chris'. For example you could use
 ```https://rtfm-demo.firebaseio.com/supermario```. All this will do is nest your firebase data under ```supermario``` so
 that your data doesn't mix with the rest of the group's.
 
@@ -74,10 +73,10 @@ angular.module('rtfmApp')
 
 4. Inject ```EnvironmentService``` into your ```LoginCtrl``` and assign your environment to ```$scope.env```, then
 read out ```{{ env }}}``` in your ```login.html``` view to confirm that your environment variables are injecting
-correctly. You should see your ```window.env``` object logged out onto your login view.
+correctly. You should see your ```window.env``` object logged out onto your login view. -->
 
 
-## Step 4: Create a Login Form
+## Step 4.1: Create a Login Form
 
 1. Open up ```login.html``` and create a text input bound to ```$scope.username``` and a button that calls
 ```logMeIn(username)``` when clicked.
@@ -199,7 +198,7 @@ thread.$save();
 
 Notice that we you could set the object property ```thread.title``` just as you would any JS object.
 
-### Step 5: Set up Threads view
+### Step 5.2: Set up Threads view
 
 1. Let's set up ```threads.html``` with a list of threads, an input and a button to create a new thread, and links to
 each thread's unique page.
