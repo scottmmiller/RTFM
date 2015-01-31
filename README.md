@@ -190,7 +190,7 @@ thread.$save();
 
 Notice that we you could set the object property ```thread.title``` just as you would any JS object.
  -->
-### Step 5.2: Set up Threads view
+<!-- ### Step 5.2: Set up Threads view
 
 1. Let's set up ```threads.html``` with a list of threads, an input and a button to create a new thread, and links to
 each thread's unique page.
@@ -352,18 +352,14 @@ angular.module('rtfmApp')
   });
 ```
 
-Notice that we've added a new ```$scope.createComment``` function. This will get called from the ```thread.html``` view and add a comment to your AngularFire ```comments``` "array".
+Notice that we've added a new ```$scope.createComment``` function. This will get called from the ```thread.html``` view and add a comment to your AngularFire ```comments``` "array". -->
 
 ## Black Diamond
 
-This is the seed of a functioning Angular + Firebase application. You could really take it anywhere, but a great first
-step would be to use
+This is the seed of a functioning Angular + Firebase application. You could really take it anywhere, but a great first step would be to use
 [FirebaseSimpleLogin](https://www.firebase.com/docs/web/libraries/angular/quickstart.html#section-authentication)
 to create a real login system rather than the ```localStorage``` hack that we've used here.
 
 You'll want to create users, get the logged in user and offer a "log out" button.
 
-Check out this [example user-service](https://gist.github.com/deltaepsilon/3b1b5cbc7ee889b2378b) if you get stuck. It's
-got some more advanced code that may look confusing at first, but read through each function and try to understand what
-it's doing. If you can't understand the function, skip it and circle back later. The important functions in this example
-are the simple ones.
+Check out this [example user-service](https://gist.github.com/deltaepsilon/3b1b5cbc7ee889b2378b) if you get stuck. It's got some more advanced code that may look confusing at first, but read through each function and try to understand what it's doing. If you can't understand the function, skip it and circle back later. The important functions in this example are the simple ones.
