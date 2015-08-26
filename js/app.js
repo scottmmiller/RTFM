@@ -15,7 +15,7 @@ app.config(function($routeProvider) {
 				return threadsService.getThreads();
 			}
 		}
-	}).when('/threads/:threadId', {
+	}).when('/thread/:threadId', {
 		templateUrl: 'js/views/SingleThread/singleThread.html',
 		controller:'SingleController',
 		resolve: {
